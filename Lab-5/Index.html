@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5 Маніпуляція DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Демонстрація маніпуляції DOM</h1>
+    </header>
+ 
+    <main>
+        <section>
+            <h2>Зміна вмісту елементів</h2>
+            <button id="changeContentButton">Змінити текст</button>
+            <p id="textElement">Це початковий текст.</p>
+        </section>
+ 
+        <section>
+            <h2>Зміна стилю при наведенні</h2>
+            <p id="hoverElement" style="font-size: 18px;">Наведіть на мене, щоб змінити стиль!</p>
+        </section>
+ 
+        <section>
+            <h2>Додавання нових елементів</h2>
+            <button id="addElementButton">Додати новий абзац</button>
+            <div id="dynamicContainer" class="dynamic-content"></div>
+        </section>
+ 
+        <section>
+            <h2>Натисніть n разів!</h2>
+            <button id="clickButton">Натисніть 19 разів!</button>
+        </section>
+    </main>
+ 
+    <footer>
+        <p>&copy; 2025 Ваше ім'я. Всі права захищені.</p>
+    </footer>
+ 
+    <script>
+        // Зміна вмісту елемента
+        const changeContentButton = document.getElementById('changeContentButton');
+        const textElement = document.getElementById('textElement');
+ 
+        changeContentButton.addEventListener('click', () => {
+            textElement.textContent = "Текст було змінено!";
+        });
+ 
+        // Зміна стилю при наведенні
+        const hoverElement = document.getElementById('hoverElement');
+ 
+        hoverElement.addEventListener('mouseover', () => {
+            hoverElement.style.fontSize = '24px';
+            hoverElement.style.backgroundColor = '#e0e0e0';
+        });
+ 
+        hoverElement.addEventListener('mouseout', () => {
+            hoverElement.style.fontSize = '18px';
+            hoverElement.style.backgroundColor = 'transparent';
+        });
+ 
+        // Додавання нових елементів
+        const addElementButton = document.getElementById('addElementButton');
+        const dynamicContainer = document.getElementById('dynamicContainer');
+ 
+        addElementButton.addEventListener('click', () => {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = "Це новий абзац!";
+            dynamicContainer.appendChild(newParagraph);
+        });
+ 
+        // Обробка кнопки натискання 19 разів
+        let clickCount = 0;
+        const clickButton = document.getElementById('clickButton');
+ 
+        clickButton.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 19) {
+                alert("Ім'я Прізвище варіант номер 19!");
+            }
+        });
+    </script>
+</body>
+</html>

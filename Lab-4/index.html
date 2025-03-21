@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота 4</title>
+</head>
+<body>
+  <script>
+    // Завдання 1: Привітання користувача
+    let userName = prompt("Введіть своє ім'я:");
+    alert("Привіт, " + userName + "!");
+    console.log("Привіт, " + userName + "!");
+
+    // Завдання 2: Арифметичні обчислення
+    let num1 = parseFloat(prompt("Введіть перше число:"));
+    let num2 = parseFloat(prompt("Введіть друге число:"));
+    let sum = num1 + num2;
+    let difference = num1 - num2;
+    alert("Сума: " + sum + "\nРізниця: " + difference);
+    console.log("Сума: " + sum, "Різниця: " + difference);
+
+    // Завдання 3: Обчислення віку
+    let birthYear = parseInt(prompt("Введіть ваш рік народження:"));
+    const currentYear = 2025;
+    const myAge = 22;
+    let userAge = currentYear - birthYear;
+    let ageDifference = Math.abs(myAge - userAge);
+    let comparison = userAge > myAge ? "старший" : "молодший";
+    alert("Ваш вік: " + userAge + " років. Ви " + comparison + " на " + ageDifference + " років.");
+  </script>
+</body>
+</html>
