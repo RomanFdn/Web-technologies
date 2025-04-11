@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Реєстрація користувача</title>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const age = parseInt(document.getElementById("age").value, 10);
+            const genderMale = document.getElementById("genderMale").checked;
+            const genderFemale = document.getElementById("genderFemale").checked;
+
+            let errors = [];
+
+            if (!name) {
+                errors.push("Поле імені є обов'язковим.");
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailPattern.test(email)) {
+                errors.push("Введіть коректний email.");
+            }
+
+            if (password.length < 6) {
+                errors.push("Пароль має містити мінімум 6 символів.");
+            }
+
+            if (password !== confirmPassword) {
+                errors.push("Паролі не збігаються.");
+            }
+
+            if (isNaN(age) || age < 10) {
+                errors.push("Вік має бути числом і не менше 10.");
+            }
+
+            if (!genderMale && !genderFemale) {
+                errors.push("Виберіть стать.");
+            }
+
+            if (errors.length > 0) {
+                alert(errors.join("\n"));
+            } else {
+                alert("Реєстрація успішна!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="f-form">
+    <h1>Форма реєстрації</h1>
+    <form id="registrationForm" onsubmit="validateForm(event)">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirmPassword">Підтвердження пароля:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+        <label for="age">Вік:</label>
+        <input type="number" id="age" name="age" min="10" required><br><br>
+        
+    <div class="lan">
+        <label>Стать:</label>
+        <label for="genderMale">Чоловік</label>
+        <input type="radio" id="genderMale" name="gender" value="male">
+        <label for="genderFemale">Жінка</label>
+        <input type="radio" id="genderFemale" name="gender" value="female">
+        <button type="submit">Зареєструватися</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
