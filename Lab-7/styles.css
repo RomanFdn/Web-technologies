@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Task 1 */
+.button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* Task 2 */
+.content {
+    max-height: 50px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    transition: max-height 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.content:hover {
+    max-height: 200px;
+    transform: scale(1.1); /* Збільшення блоку */
+}
+
+/* Task 3 */
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: #28a745;
+    position: relative;
+    animation: moveBox 2s infinite alternate;
+}
+
+@keyframes moveBox {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+/* Task 4 */
+
+.circle-container {
+    margin-top: 20px;
+    position: relative;
+    height: 200px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #ff5722;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: background-color 0.5s;
+}
+
+.circle-button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
