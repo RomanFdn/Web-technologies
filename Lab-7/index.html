@@ -3,27 +3,28 @@
 <head>
     <title>Lab 7</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 <body>
-    <h1>Welcome to Lab 7</h1>
+    <h1>Вітаю в моїй 7 лабі</h1>
     <!-- Task 1 -->
-    <h2>Task 1 push botton spring</h2>
+    <h2>Завдання 1: кнопка</h2>
     <div class="button-container">
-        <button class="button">Hover & Click Me!</button>
+        <button class="button">Натисни на мене!</button>
     </div>
     <!-- Task 2 -->
-    <h2>Task 2</h2>
-    <div class="content">
-        <p>Hover to expand this text block. It will smoothly expand!</p>
+    <h2>Завдання 2: рамка з розширенням</h2>
+    <div class="content-wrapper">
+        <p>Спробував усе оптимізувати</p>
+        <p>Я дуже старався:></p>
     </div>
     <!-- Task 3 -->
-    <h2>Task 3</h2>
+    <h2>Завдання 3: рухомий квадрат</h2>
     <div class="box"></div>
     <!-- Індивідуальне завдання: Анімація руху кола -->
-    <div class="circle-container">
-        <button class="circle-button">Move Circle</button>
-        <div class="circle"></div>
-    </div>
+    <h2>Індивідуальне завдання</h2>
+    <button class="change-btn" onclick="toggleBackground()">Змінити колір тла</button>    
+    <button id="moveBtn">Запустити анімацію</button>
+    <div class="circle" id="circle"></div>
+    <script src="script.js"></script>
 </body>
 </html>
