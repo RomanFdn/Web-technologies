@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №8</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Лабораторна робота №8</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ім'я</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="usersTable"></tbody>
+    </table>
+
+    <div class="button-container">
+        <button class="btn btn-refresh" onclick="fetchUsers()">Оновити</button>
+    </div>
+
+    <div class="form-container">
+        <h2>Додати користувача</h2>
+        <input type="text" id="nameInput" placeholder="Ім'я" required>
+        <input type="email" id="emailInput" placeholder="Email" required>
+        <button class="btn btn-add" onclick="addUser()">Додати</button>
+    </div>
+
+    <p id="error" class="error"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
