@@ -9,7 +9,7 @@ function addTask() {
     const taskText = taskInput.value.trim();
 
     if (taskText === "") {
-        alert("Будь ласка, введіть завдання!");
+        alert("Е ну введи завдання а потім зберігай!");
         return;
     }
 
@@ -34,12 +34,12 @@ function loadTasks() {
         taskTextElement.textContent = task;
 
         const editBtn = document.createElement("button");
-        editBtn.textContent = "Редагувати";
+        editBtn.textContent = "Редагувати💂‍♀️";
         editBtn.className = "edit-btn";
         editBtn.onclick = () => editTask(index, li, taskTextElement);
 
         const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Видалити";
+        deleteBtn.textContent = "Видалити😶‍🌫️";
         deleteBtn.className = "delete-btn";
         deleteBtn.onclick = () => deleteTask(index);
 
@@ -59,7 +59,7 @@ function editTask(index, li, taskTextElement) {
     editInput.value = tasks[index];
 
     const saveBtn = document.createElement("button");
-    saveBtn.textContent = "Зберегти";
+    saveBtn.textContent = "Зберегти😁";
     saveBtn.onclick = () => {
         const newText = editInput.value.trim();
         if (newText) {
@@ -67,7 +67,7 @@ function editTask(index, li, taskTextElement) {
             saveTasksToStorage(tasks);
             loadTasks();
         } else {
-            alert("Завдання не може бути порожнім!");
+            alert("Ну ти і хитрун давай пиши завдання і лягай спати!");
         }
     };
 
