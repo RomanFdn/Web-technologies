@@ -12,3 +12,13 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         alert('Ви знайшли великодку вітаю пишіть далі)!');
     }
 });
+
+window.onload = function() {
+    window.scrollTo(0, 0);
+
+    const progressBars = document.querySelectorAll('.progress');
+    progressBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width + '%';
+    });
+};
